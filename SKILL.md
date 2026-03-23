@@ -68,7 +68,11 @@ Default action:
 
 ### First-Occurrence Rule
 
-When a correction *could* be reusable but has no prior occurrence in memory to confirm recurrence: write a **daily note entry** with the correction class and pattern. This creates the retrievable trace needed to detect recurrence next time. The cost of one extra daily-note bullet is lower than the cost of losing a pattern that repeats.
+When a correction *could* be reusable but has no prior occurrence in memory to confirm recurrence:
+- If the correction states a portable rule (applies across tasks/sessions), write it to the **topic file** that owns the subject (e.g., `nova-calibration.md`, workflow notes, or the relevant project file). A topic file entry is retrievable by subject; a daily-note entry is not.
+- If the correction is ambiguous and cannot be stated as a portable rule yet, write a **daily note entry** as a dated trace for recurrence detection.
+
+Default to topic file. Use daily note only when you genuinely cannot formulate a reusable rule from the correction.
 
 ### Reusable correction pattern
 Use this when the correction can be stated as a rule that should help on future tasks.
@@ -200,10 +204,10 @@ Ask:
 - Would hardening reduce risk without overfitting?
 
 If uncertain, prefer:
-- **daily note** over new topic file
+- **existing topic file** over daily note (daily note is not a classification fallback)
 - **existing topic file** over new calibration file
 - **skill update** over broad policy edits
-- **no write** over noisy memory
+- **no write** over noisy memory — but only when the correction genuinely has no future retrieval value
 
 ## Output Expectation
 
