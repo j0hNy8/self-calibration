@@ -14,7 +14,9 @@ When the user corrects an output, behavior, assumption, or workflow step:
 2. Classify it.
 3. Decide whether it is **one-off** or a **reusable pattern**.
 4. Choose the smallest durable write target that prevents repeat mistakes.
-5. Escalate to policy/skill hardening only when recurrence or impact justifies it.
+5. **If the write decision is anything other than "none," execute the write immediately** using session-writeback procedure before returning the classification summary.
+6. Escalate to policy/skill hardening only when recurrence or impact justifies it.
+
 
 Default is conservative: many corrections should result in **no durable write**.
 
@@ -63,6 +65,10 @@ Default action:
 - correct in-session
 - usually **no durable write**
 - if a dated trail matters, write **daily note only**
+
+### First-Occurrence Rule
+
+When a correction *could* be reusable but has no prior occurrence in memory to confirm recurrence: write a **daily note entry** with the correction class and pattern. This creates the retrievable trace needed to detect recurrence next time. The cost of one extra daily-note bullet is lower than the cost of losing a pattern that repeats.
 
 ### Reusable correction pattern
 Use this when the correction can be stated as a rule that should help on future tasks.
